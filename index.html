@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZemaFlow - Ethiopian Drill & Rap Marketplace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neon: '#00ff88',
+                        gold: '#ffd700',
+                        dark: '#0a0a0a',
+                        darker: '#050505'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background: #000;
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
+        .glow {
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+        }
+        .gold-glow {
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav class="bg-gray-900/95 backdrop-blur-md border-b border-gray-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="text-2xl font-extrabold text-neon tracking-tighter">ZemaFlow</div>
+            <div class="flex items-center space-x-3">
+                <button onclick="toggleLang()" class="px-3 py-1.5 border border-gray-600 rounded-full hover:border-neon transition-colors text-sm">
+                    🌐 <span id="lang-btn">አማ</span>
+                </button>
+                <button class="hidden md:block px-4 py-2 border border-gray-600 rounded-full hover:border-neon transition-colors text-sm">
+                    Log In
+                </button>
+                <button class="px-4 py-2 bg-neon text-black font-bold rounded-full hover:bg-green-400 transition-colors text-sm">
+                    Sign Up
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-b from-gray-900 via-black to-black py-20 px-4 overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-neon opacity-10 blur-[100px] rounded-full"></div>
+        
+        <div class="relative max-w-4xl mx-auto text-center z-10">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+                <span id="hero-title">Own the Flow.</span><br>
+                <span class="text-neon" id="hero-subtitle">The Ultimate Ethiopian Drill & Rap Marketplace.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto" id="hero-desc">
+                Buy exclusive tracks, beats, and official merch directly from your favorite Ethiopian artists.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="px-8 py-4 bg-neon text-black font-bold rounded-lg hover:bg-green-400 transition-all transform hover:scale-105">
+                    🎵 Explore Music
+                </button>
+                <button class="px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-black transition-all">
+                    Start Selling
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="py-16 px-4 bg-black">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl hover:border-neon hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                <div class="text-neon mb-4 text-4xl">🎵</div>
+                <h3 class="text-xl font-bold mb-3 text-white">Music & Tracks</h3>
+                <p class="text-gray-400 text-sm">Buy and download exclusive tracks directly from artists in ETB.</p>
+            </div>
+            <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl hover:border-neon hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                <div class="text-neon mb-4 text-4xl">🎹</div>
+                <h3 class="text-xl font-bold mb-3 text-white">Beat Marketplace</h3>
+                <p class="text-gray-400 text-sm">Producers selling high-quality Ethiopian Drill, Trap, and Hip-Hop instrumentals.</p>
+            </div>
+            <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl hover:border-neon hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                <div class="text-neon mb-4 text-4xl">👕</div>
+                <h3 class="text-xl font-bold mb-3 text-white">Official Merch</h3>
+                <p class="text-gray-400 text-sm">Get authentic hoodies, hats, and accessories from your favorite artists.</p>
+            </div>
+            <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl hover:border-neon hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                <div class="text-neon mb-4 text-4xl">🎥</div>
+                <h3 class="text-xl font-bold mb-3 text-white">Exclusive Videos</h3>
+                <p class="text-gray-400 text-sm">Watch music videos, behind-the-scenes, and live performances.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIP Club -->
+    <section class="py-20 px-4 bg-gradient-to-r from-yellow-900/40 via-black to-black border-y border-yellow-900/30">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-6 text-gold">👑 Join the ZemaFlow VIP Club</h2>
+            <p class="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
+                Get early access to new drops, exclusive behind-the-scenes content, direct messaging with artists, and discounts on all merch.
+            </p>
+            <button class="px-10 py-4 bg-gold text-black font-extrabold rounded-lg hover:bg-yellow-400 transition-all transform hover:scale-105 gold-glow">
+                Become a VIP Member
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 px-4 border-t border-gray-900">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-2xl font-extrabold text-neon">ZemaFlow</div>
+            <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
+                <a href="#" class="hover:text-neon transition-colors">About</a>
+                <a href="#" class="hover:text-neon transition-colors">Contact</a>
+                <a href="#" class="hover:text-neon transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-neon transition-colors">Privacy Policy</a>
+            </div>
+        </div>
+        <div class="text-center text-gray-600 text-sm mt-10">
+            © 2024 ZemaFlow. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        let currentLang = 'en';
+        
+        const translations = {
+            en: {
+                heroTitle: 'Own the Flow.',
+                heroSubtitle: 'The Ultimate Ethiopian Drill & Rap Marketplace.',
+                heroDesc: 'Buy exclusive tracks, beats, and official merch directly from your favorite Ethiopian artists.'
+            },
+            am: {
+                heroTitle: 'ፍሰቱን ተቆጣጠር።',
+                heroSubtitle: 'የኢትዮጵያ ድሪል እና ራፕ ገበያ።',
+                heroDesc: 'ከተወዳጅ አርቲስቶችህ ሙዚቃ፣ ቢት እና ኦፊሴላዊ ሜርች በቀጥታ ግዛ።'
+            }
+        };
+        
+        function toggleLang() {
+            currentLang = currentLang === 'en' ? 'am' : 'en';
+            const t = translations[currentLang];
+            
+            document.getElementById('hero-title').textContent = t.heroTitle;
+            document.getElementById('hero-subtitle').textContent = t.heroSubtitle;
+            document.getElementById('hero-desc').textContent = t.heroDesc;
+            document.getElementById('lang-btn').textContent = currentLang === 'en' ? 'አማ' : 'EN';
+        }
+    </script>
+    
+</body>
+</html>
