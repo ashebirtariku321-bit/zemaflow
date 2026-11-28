@@ -3,36 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ZemaFlow - Ethiopian Drill & Rap Marketplace. Buy music, beats, and merch.">
-    <meta name="keywords" content="Ethiopian music, Drill, Rap, Hip-Hop, Marketplace">
+    <meta name="description" content="ZemaFlow - Ethiopian Drill & Rap Marketplace.">
     <title>ZemaFlow - Ethiopian Drill & Rap Marketplace</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        neon: '#00ff88',
-                        gold: '#ffd700',
-                        dark: '#0a0a0a',
-                        darker: '#050505'
-                    }
+                    colors: { neon: '#00ff88', gold: '#ffd700', dark: '#0a0a0a' }
                 }
             }
         }
     </script>
     <style>
-        body {
-            background: #000;
-            color: white;
-            font-family: 'Inter', system-ui, sans-serif;
-        }
-        .glow {
-            box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
-        }
-        .gold-glow {
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
-        }
+        body { background: #000; color: white; font-family: system-ui, sans-serif; }
+        input[type=range] { -webkit-appearance: none; background: transparent; }
+        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 12px; width: 12px; border-radius: 50%; background: #00ff88; cursor: pointer; margin-top: -4px; }
+        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; cursor: pointer; background: #374151; border-radius: 2px; }
     </style>
 </head>
 <body>
@@ -41,35 +28,23 @@
     <nav class="bg-gray-900/95 backdrop-blur-md border-b border-gray-800 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
             <div class="text-2xl font-extrabold text-neon tracking-tighter">ZemaFlow</div>
-            <div class="hidden md:flex space-x-6 text-sm font-medium">
-                <a href="#home" class="hover:text-neon transition-colors" data-en="Home" data-am="መነሻ">Home</a>
-                <a href="#music" class="hover:text-neon transition-colors" data-en="Music" data-am="ሙዚቃ">Music</a>
-                <a href="#beats" class="hover:text-neon transition-colors" data-en="Beats" data-am="ቢት">Beats</a>
-                <a href="#merch" class="hover:text-neon transition-colors" data-en="Merch" data-am="ሜርች">Merch</a>
-                <a href="#vip" class="hover:text-gold transition-colors" data-en="VIP Club" data-am="VIP ክለብ">VIP Club</a>
-            </div>
             <div class="flex items-center space-x-3">
-                <button onclick="toggleLang()" class="px-3 py-1.5 border border-gray-600 rounded-full hover:border-neon transition-colors text-sm">
-                    🌐 <span id="lang-btn">አማ</span>
-                </button>
-                <button class="hidden md:block px-4 py-2 border border-gray-600 rounded-full hover:border-neon transition-colors text-sm" data-en="Log In" data-am="ግባ">Log In</button>
-                <button class="px-4 py-2 bg-neon text-black font-bold rounded-full hover:bg-green-400 transition-colors text-sm" data-en="Sign Up" data-am="ተመዝገብ">Sign Up</button>
+                <button onclick="toggleLang()" class="px-3 py-1.5 border border-gray-600 rounded-full hover:border-neon text-sm">🌐 <span id="lang-btn">አማ</span></button>
+                <button class="hidden md:block px-4 py-2 border border-gray-600 rounded-full hover:border-neon text-sm" data-en="Log In" data-am="ግባ">Log In</button>
+                <button class="px-4 py-2 bg-neon text-black font-bold rounded-full hover:bg-green-400 text-sm" data-en="Sign Up" data-am="ተመዝገብ">Sign Up</button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative bg-gradient-to-b from-gray-900 via-black to-black py-20 px-4 overflow-hidden">
+    <section class="relative bg-gradient-to-b from-gray-900 via-black to-black py-20 px-4 overflow-hidden">
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-neon opacity-10 blur-[100px] rounded-full"></div>
-        
         <div class="relative max-w-4xl mx-auto text-center z-10">
             <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
                 <span data-en="Own the Flow." data-am="ፍሰቱን ተቆጣጠር።">Own the Flow.</span><br>
                 <span class="text-neon" data-en="The Ultimate Ethiopian Drill & Rap Marketplace." data-am="የኢትዮጵያ ድሪል እና ራፕ ገበያ።">The Ultimate Ethiopian Drill & Rap Marketplace.</span>
             </h1>
-            <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto" data-en="Buy exclusive tracks, beats, and official merch directly from your favorite Ethiopian artists. Secure payments via Telebirr & CBE." data-am="ከተወዳጅ አርቲስቶችህ ሙዚቃ፣ ቢት እና ኦፊሴላዊ ሜርች በቀጥታ ግዛ። በቴሌብር እና CBE ደህንነቱ የተጠበቀ ክፍያ።">
-                Buy exclusive tracks, beats, and official merch directly from your favorite Ethiopian artists. Secure payments via Telebirr & CBE.
-            </p>
+            <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto" data-en="Buy exclusive tracks, beats, and official merch directly from your favorite Ethiopian artists." data-am="ከተወዳጅ አርቲስቶችህ ሙዚቃ፣ ቢት እና ኦፊሴላዊ ሜርች በቀጥታ ግዛ።">Buy exclusive tracks, beats, and official merch directly from your favorite Ethiopian artists.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <button class="px-8 py-4 bg-neon text-black font-bold rounded-lg hover:bg-green-400 transition-all transform hover:scale-105" data-en="🎵 Explore Music" data-am="🎵 ሙዚቃ አስስ">🎵 Explore Music</button>
                 <button class="px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-black transition-all" data-en="Start Selling" data-am="መሸጥ ጀምር">Start Selling</button>
@@ -78,39 +53,95 @@
     </section>
 
     <!-- Featured Categories -->
-    <section id="music" class="py-16 px-4 bg-black">
+    <section class="py-16 px-4 bg-black">
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl hover:border-neon hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+            <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl hover:border-neon hover:-translate-y-2 transition-all cursor-pointer">
                 <div class="text-neon mb-4 text-4xl">🎵</div>
-                <h3 class="text-xl font-bold mb-3 text-white" data-en="Music & Tracks" data-am="ሙዚቃ እና ትራኮች">Music & Tracks</h3>
+                <h3 class="text-xl font-bold mb-3" data-en="Music & Tracks" data-am="ሙዚቃ እና ትራኮች">Music & Tracks</h3>
                 <p class="text-gray-400 text-sm" data-en="Buy and download exclusive tracks directly from artists in ETB." data-am="ከአርቲስቶች በቀጥታ በብር አውርድ እና ግዛ።">Buy and download exclusive tracks directly from artists in ETB.</p>
             </div>
-            <div id="beats" class="bg-gray-900 border border-gray-800 p-8 rounded-2xl hover:border-neon hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+            <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl hover:border-neon hover:-translate-y-2 transition-all cursor-pointer">
                 <div class="text-neon mb-4 text-4xl">🎹</div>
-                <h3 class="text-xl font-bold mb-3 text-white" data-en="Beat Marketplace" data-am="የቢት ገበያ">Beat Marketplace</h3>
+                <h3 class="text-xl font-bold mb-3" data-en="Beat Marketplace" data-am="የቢት ገበያ">Beat Marketplace</h3>
                 <p class="text-gray-400 text-sm" data-en="Producers selling high-quality Ethiopian Drill, Trap, and Hip-Hop instrumentals." data-am="ፕሮዲውሰሮች የሚሸጡት ጥራት ያላቸው ድሪል፣ ትራፕ እና ራፕ ቢቶች።">Producers selling high-quality Ethiopian Drill, Trap, and Hip-Hop instrumentals.</p>
             </div>
-            <div id="merch" class="bg-gray-900 border border-gray-800 p-8 rounded-2xl hover:border-neon hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+            <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl hover:border-neon hover:-translate-y-2 transition-all cursor-pointer">
                 <div class="text-neon mb-4 text-4xl">👕</div>
-                <h3 class="text-xl font-bold mb-3 text-white" data-en="Official Merch" data-am="ኦፊሴላዊ ሜርች">Official Merch</h3>
+                <h3 class="text-xl font-bold mb-3" data-en="Official Merch" data-am="ኦፊሴላዊ ሜርች">Official Merch</h3>
                 <p class="text-gray-400 text-sm" data-en="Get authentic hoodies, hats, and accessories from your favorite artists." data-am="ከተወዳጅ አርቲስቶች ሁዲ፣ ኮፍያ እና አክሰሰሪዎች።">Get authentic hoodies, hats, and accessories from your favorite artists.</p>
             </div>
-            <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl hover:border-neon hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+            <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl hover:border-neon hover:-translate-y-2 transition-all cursor-pointer">
                 <div class="text-neon mb-4 text-4xl">🎥</div>
-                <h3 class="text-xl font-bold mb-3 text-white" data-en="Exclusive Videos" data-am="ልዩ ቪዲዮዎች">Exclusive Videos</h3>
+                <h3 class="text-xl font-bold mb-3" data-en="Exclusive Videos" data-am="ልዩ ቪዲዮዎች">Exclusive Videos</h3>
                 <p class="text-gray-400 text-sm" data-en="Watch music videos, behind-the-scenes, and live performances." data-am="የሙዚቃ ቪዲዮዎችን፣ የስቱዲዮ ጀርባ እና የቀጥታ ትርኢቶችን ይመልከቱ።">Watch music videos, behind-the-scenes, and live performances.</p>
             </div>
         </div>
     </section>
 
+    <!-- NEW: Music Player Section -->
+    <section class="py-16 px-4 bg-gray-900/50">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+                <span class="w-2 h-8 bg-neon rounded-full"></span>
+                <span data-en="Trending Tracks" data-am="አሁን የሚወደዱ ሙዚቃዎች">Trending Tracks</span>
+            </h2>
+            
+            <!-- Player UI -->
+            <div class="bg-black border border-gray-800 rounded-2xl p-6 shadow-2xl">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 bg-gradient-to-br from-neon to-green-900 rounded-lg flex items-center justify-center text-2xl">🎵</div>
+                    <div class="flex-1">
+                        <h3 id="track-title" class="text-lg font-bold text-white">Addis Drill Anthem</h3>
+                        <p id="track-artist" class="text-sm text-gray-400">ZemaFlow Artist</p>
+                    </div>
+                    <button id="play-btn" onclick="togglePlay()" class="w-12 h-12 bg-neon text-black rounded-full flex items-center justify-center hover:bg-green-400 transition-all">
+                        <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    </button>
+                </div>
+                
+                <!-- Progress Bar -->
+                <div class="flex items-center gap-3 text-xs text-gray-400 mb-4">
+                    <span id="current-time">0:00</span>
+                    <input type="range" id="progress-bar" value="0" max="100" class="w-full" oninput="seekAudio()">
+                    <span id="duration">0:00</span>
+                </div>
+                
+                <!-- Hidden Audio Element (Using a free sample for testing) -->
+                <audio id="audio-player" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+            </div>
+
+            <!-- Track List -->
+            <div class="mt-6 space-y-3">
+                <div onclick="loadTrack('Addis Drill Anthem', 'ZemaFlow Artist', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3')" class="flex items-center justify-between p-4 bg-gray-900 border border-gray-800 rounded-xl hover:border-neon cursor-pointer transition-all">
+                    <div class="flex items-center gap-3">
+                        <span class="text-neon">▶</span>
+                        <div>
+                            <p class="font-semibold">Addis Drill Anthem</p>
+                            <p class="text-xs text-gray-400">ZemaFlow Artist</p>
+                        </div>
+                    </div>
+                    <span class="text-sm text-gray-400">3:45</span>
+                </div>
+                <div onclick="loadTrack('Night in Bole', 'Ethio Trap Star', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3')" class="flex items-center justify-between p-4 bg-gray-900 border border-gray-800 rounded-xl hover:border-neon cursor-pointer transition-all">
+                    <div class="flex items-center gap-3">
+                        <span class="text-neon">▶</span>
+                        <div>
+                            <p class="font-semibold">Night in Bole</p>
+                            <p class="text-xs text-gray-400">Ethio Trap Star</p>
+                        </div>
+                    </div>
+                    <span class="text-sm text-gray-400">4:12</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- VIP Club -->
-    <section id="vip" class="py-20 px-4 bg-gradient-to-r from-yellow-900/40 via-black to-black border-y border-yellow-900/30">
+    <section class="py-20 px-4 bg-gradient-to-r from-yellow-900/40 via-black to-black border-y border-yellow-900/30">
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="text-3xl md:text-4xl font-extrabold mb-6 text-gold" data-en="👑 Join the ZemaFlow VIP Club" data-am="👑 የ ZemaFlow VIP ክለብን ይቀላቀሉ">👑 Join the ZemaFlow VIP Club</h2>
-            <p class="text-lg text-gray-300 mb-10 max-w-2xl mx-auto" data-en="Get early access to new drops, exclusive behind-the-scenes content, direct messaging with artists, and discounts on all merch." data-am="አዳዲስ ሙዚቃዎችን ቀድመው ያግኙ፣ ልዩ ይዘቶችን ይመልከቱ፣ ከአርቲስቶች ጋር በቀጥታ ይገናኙ እና በሁሉም ሜርች ቅናሽ ያግኙ።">
-                Get early access to new drops, exclusive behind-the-scenes content, direct messaging with artists, and discounts on all merch.
-            </p>
-            <button class="px-10 py-4 bg-gold text-black font-extrabold rounded-lg hover:bg-yellow-400 transition-all transform hover:scale-105 gold-glow" data-en="Become a VIP Member" data-am="VIP አባል ይሁኑ">Become a VIP Member</button>
+            <p class="text-lg text-gray-300 mb-10 max-w-2xl mx-auto" data-en="Get early access to new drops, exclusive behind-the-scenes content, direct messaging with artists, and discounts on all merch." data-am="አዳዲስ ሙዚቃዎችን ቀድመው ያግኙ፣ ልዩ ይዘቶችን ይመልከቱ፣ ከአርቲስቶች ጋር በቀጥታ ይገናኙ እና በሁሉም ሜርች ቅናሽ ያግኙ።">Get early access to new drops, exclusive behind-the-scenes content, direct messaging with artists, and discounts on all merch.</p>
+            <button class="px-10 py-4 bg-gold text-black font-extrabold rounded-lg hover:bg-yellow-400 transition-all transform hover:scale-105" data-en="Become a VIP Member" data-am="VIP አባል ይሁኑ">Become a VIP Member</button>
         </div>
     </section>
 
@@ -119,36 +150,57 @@
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="text-2xl font-extrabold text-neon">ZemaFlow</div>
             <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
-                <a href="#" class="hover:text-neon transition-colors" data-en="About" data-am="ስለ እኛ">About</a>
-                <a href="#" class="hover:text-neon transition-colors" data-en="Contact" data-am="ያግኙን">Contact</a>
-                <a href="#" class="hover:text-neon transition-colors" data-en="Terms of Service" data-am="የአገልግሎት ውል">Terms of Service</a>
-                <a href="#" class="hover:text-neon transition-colors" data-en="Privacy Policy" data-am="የግላዊነት ፖሊሲ">Privacy Policy</a>
+                <a href="#" class="hover:text-neon" data-en="About" data-am="ስለ እኛ">About</a>
+                <a href="#" class="hover:text-neon" data-en="Contact" data-am="ያግኙን">Contact</a>
+                <a href="#" class="hover:text-neon" data-en="Terms of Service" data-am="የአገልግሎት ውል">Terms of Service</a>
+                <a href="#" class="hover:text-neon" data-en="Privacy Policy" data-am="የግላዊነት ፖሊሲ">Privacy Policy</a>
             </div>
         </div>
-        <div class="text-center text-gray-600 text-sm mt-10">
-            © 2024 ZemaFlow. <span data-en="All rights reserved." data-am="መብቱ በህግ የተጠበቀ ነው።">All rights reserved.</span>
-        </div>
+        <div class="text-center text-gray-600 text-sm mt-10">© 2024 ZemaFlow. <span data-en="All rights reserved." data-am="መብቱ በህግ የተጠበቀ ነው።">All rights reserved.</span></div>
     </footer>
 
     <script>
+        // Language Toggle
         let currentLang = localStorage.getItem('zemaflow-lang') || 'en';
-        
         function updateLanguage() {
-            document.querySelectorAll('[data-en]').forEach(el => {
-                el.textContent = el.getAttribute('data-' + currentLang);
-            });
+            document.querySelectorAll('[data-en]').forEach(el => { el.textContent = el.getAttribute('data-' + currentLang); });
             document.getElementById('lang-btn').textContent = currentLang === 'en' ? 'አማ' : 'EN';
-            document.documentElement.lang = currentLang;
             localStorage.setItem('zemaflow-lang', currentLang);
         }
-        
-        function toggleLang() {
-            currentLang = currentLang === 'en' ? 'am' : 'en';
-            updateLanguage();
-        }
-        
+        function toggleLang() { currentLang = currentLang === 'en' ? 'am' : 'en'; updateLanguage(); }
         updateLanguage();
+
+        // Audio Player Logic (Lightweight & Secure)
+        const audio = document.getElementById('audio-player');
+        const playBtn = document.getElementById('play-btn');
+        const playIcon = document.getElementById('play-icon');
+        const progressBar = document.getElementById('progress-bar');
+        const currentTimeEl = document.getElementById('current-time');
+        const durationEl = document.getElementById('duration');
+
+        function togglePlay() {
+            if (audio.paused) { audio.play(); playIcon.innerHTML = '<rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect>'; } 
+            else { audio.pause(); playIcon.innerHTML = '<polygon points="5 3 19 12 5 21 5 3"></polygon>'; }
+        }
+
+        function loadTrack(title, artist, src) {
+            document.getElementById('track-title').textContent = title;
+            document.getElementById('track-artist').textContent = artist;
+            audio.src = src;
+            audio.play();
+            playIcon.innerHTML = '<rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect>';
+        }
+
+        audio.addEventListener('timeupdate', () => {
+            if (audio.duration) {
+                progressBar.value = (audio.currentTime / audio.duration) * 100;
+                currentTimeEl.textContent = formatTime(audio.currentTime);
+                durationEl.textContent = formatTime(audio.duration);
+            }
+        });
+
+        function seekAudio() { audio.currentTime = (progressBar.value / 100) * audio.duration; }
+        function formatTime(seconds) { const m = Math.floor(seconds / 60); const s = Math.floor(seconds % 60); return `${m}:${s < 10 ? '0' : ''}${s}`; }
     </script>
-    
 </body>
 </html>
