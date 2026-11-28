@@ -78,7 +78,7 @@
         </div>
     </section>
 
-    <!-- NEW: Featured Artists Section -->
+    <!-- Featured Artists Section -->
     <section class="py-16 px-4 bg-gray-900/30">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
@@ -87,7 +87,6 @@
             </h2>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Artist Card 1 -->
                 <div class="bg-black border border-gray-800 rounded-2xl overflow-hidden hover:border-neon transition-all group">
                     <div class="h-48 bg-gradient-to-br from-purple-900 to-black flex items-center justify-center text-6xl font-bold text-gray-700 group-hover:text-neon transition-colors">AD</div>
                     <div class="p-6">
@@ -97,7 +96,6 @@
                     </div>
                 </div>
 
-                <!-- Artist Card 2 -->
                 <div class="bg-black border border-gray-800 rounded-2xl overflow-hidden hover:border-neon transition-all group">
                     <div class="h-48 bg-gradient-to-br from-blue-900 to-black flex items-center justify-center text-6xl font-bold text-gray-700 group-hover:text-neon transition-colors">ET</div>
                     <div class="p-6">
@@ -107,13 +105,44 @@
                     </div>
                 </div>
 
-                <!-- Artist Card 3 -->
                 <div class="bg-black border border-gray-800 rounded-2xl overflow-hidden hover:border-neon transition-all group">
                     <div class="h-48 bg-gradient-to-br from-red-900 to-black flex items-center justify-center text-6xl font-bold text-gray-700 group-hover:text-neon transition-colors">ZM</div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-white mb-1">Zema Flow Master</h3>
                         <p class="text-neon text-sm mb-4">Hip-Hop / R&B</p>
                         <button class="w-full py-2 border border-gray-700 rounded-lg text-sm font-semibold hover:bg-neon hover:text-black hover:border-neon transition-all" data-en="View Profile" data-am="ፕሮፋይል ይመልከቱ">View Profile</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Video Section (High Traffic Optimized with lazy loading) -->
+    <section class="py-16 px-4 bg-black">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+                <span class="w-2 h-8 bg-neon rounded-full"></span>
+                <span data-en="Latest Music Videos" data-am="የቅርብ ጊዜ የሙዚቃ ቪዲዮዎች">Latest Music Videos</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Video 1 -->
+                <div class="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden">
+                    <div class="aspect-video">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-white" data-en="Addis Drill Anthem" data-am="አዲስ ድሪል አንተም">Addis Drill Anthem</h3>
+                        <p class="text-sm text-gray-400">Addis Drill King</p>
+                    </div>
+                </div>
+                <!-- Video 2 -->
+                <div class="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden">
+                    <div class="aspect-video">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/jfKfPfyJRdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-white" data-en="Night in Bole" data-am="ሌሊት በቦሌ">Night in Bole</h3>
+                        <p class="text-sm text-gray-400">Ethio Trap Star</p>
                     </div>
                 </div>
             </div>
