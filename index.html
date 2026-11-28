@@ -78,7 +78,49 @@
         </div>
     </section>
 
-    <!-- NEW: Music Player Section -->
+    <!-- NEW: Featured Artists Section -->
+    <section class="py-16 px-4 bg-gray-900/30">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+                <span class="w-2 h-8 bg-neon rounded-full"></span>
+                <span data-en="Featured Artists" data-am="ተመራጭ አርቲስቶች">Featured Artists</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Artist Card 1 -->
+                <div class="bg-black border border-gray-800 rounded-2xl overflow-hidden hover:border-neon transition-all group">
+                    <div class="h-48 bg-gradient-to-br from-purple-900 to-black flex items-center justify-center text-6xl font-bold text-gray-700 group-hover:text-neon transition-colors">AD</div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Addis Drill King</h3>
+                        <p class="text-neon text-sm mb-4">Ethiopian Drill / Rap</p>
+                        <button class="w-full py-2 border border-gray-700 rounded-lg text-sm font-semibold hover:bg-neon hover:text-black hover:border-neon transition-all" data-en="View Profile" data-am="ፕሮፋይል ይመልከቱ">View Profile</button>
+                    </div>
+                </div>
+
+                <!-- Artist Card 2 -->
+                <div class="bg-black border border-gray-800 rounded-2xl overflow-hidden hover:border-neon transition-all group">
+                    <div class="h-48 bg-gradient-to-br from-blue-900 to-black flex items-center justify-center text-6xl font-bold text-gray-700 group-hover:text-neon transition-colors">ET</div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Ethio Trap Star</h3>
+                        <p class="text-neon text-sm mb-4">Trap / Hip-Hop</p>
+                        <button class="w-full py-2 border border-gray-700 rounded-lg text-sm font-semibold hover:bg-neon hover:text-black hover:border-neon transition-all" data-en="View Profile" data-am="ፕሮፋይል ይመልከቱ">View Profile</button>
+                    </div>
+                </div>
+
+                <!-- Artist Card 3 -->
+                <div class="bg-black border border-gray-800 rounded-2xl overflow-hidden hover:border-neon transition-all group">
+                    <div class="h-48 bg-gradient-to-br from-red-900 to-black flex items-center justify-center text-6xl font-bold text-gray-700 group-hover:text-neon transition-colors">ZM</div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Zema Flow Master</h3>
+                        <p class="text-neon text-sm mb-4">Hip-Hop / R&B</p>
+                        <button class="w-full py-2 border border-gray-700 rounded-lg text-sm font-semibold hover:bg-neon hover:text-black hover:border-neon transition-all" data-en="View Profile" data-am="ፕሮፋይል ይመልከቱ">View Profile</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Player Section -->
     <section class="py-16 px-4 bg-gray-900/50">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
@@ -86,7 +128,6 @@
                 <span data-en="Trending Tracks" data-am="አሁን የሚወደዱ ሙዚቃዎች">Trending Tracks</span>
             </h2>
             
-            <!-- Player UI -->
             <div class="bg-black border border-gray-800 rounded-2xl p-6 shadow-2xl">
                 <div class="flex items-center gap-4 mb-6">
                     <div class="w-16 h-16 bg-gradient-to-br from-neon to-green-900 rounded-lg flex items-center justify-center text-2xl">🎵</div>
@@ -95,22 +136,19 @@
                         <p id="track-artist" class="text-sm text-gray-400">ZemaFlow Artist</p>
                     </div>
                     <button id="play-btn" onclick="togglePlay()" class="w-12 h-12 bg-neon text-black rounded-full flex items-center justify-center hover:bg-green-400 transition-all">
-                        <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
                     </button>
                 </div>
                 
-                <!-- Progress Bar -->
                 <div class="flex items-center gap-3 text-xs text-gray-400 mb-4">
                     <span id="current-time">0:00</span>
                     <input type="range" id="progress-bar" value="0" max="100" class="w-full" oninput="seekAudio()">
                     <span id="duration">0:00</span>
                 </div>
                 
-                <!-- Hidden Audio Element (Using a free sample for testing) -->
                 <audio id="audio-player" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
             </div>
 
-            <!-- Track List -->
             <div class="mt-6 space-y-3">
                 <div onclick="loadTrack('Addis Drill Anthem', 'ZemaFlow Artist', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3')" class="flex items-center justify-between p-4 bg-gray-900 border border-gray-800 rounded-xl hover:border-neon cursor-pointer transition-all">
                     <div class="flex items-center gap-3">
@@ -170,9 +208,8 @@
         function toggleLang() { currentLang = currentLang === 'en' ? 'am' : 'en'; updateLanguage(); }
         updateLanguage();
 
-        // Audio Player Logic (Lightweight & Secure)
+        // Audio Player Logic
         const audio = document.getElementById('audio-player');
-        const playBtn = document.getElementById('play-btn');
         const playIcon = document.getElementById('play-icon');
         const progressBar = document.getElementById('progress-bar');
         const currentTimeEl = document.getElementById('current-time');
